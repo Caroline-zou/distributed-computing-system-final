@@ -49,7 +49,7 @@ do
 
 	sudo -u ubuntu \
 		sshpass -p $passwd \
-		ssh -o StrictHostKeyChecking=no ubuntu@$name \
+		ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@$name \
 		"
 		sudo rm -r -f /home/ubuntu/.ssh;
 		echo '$host' | sudo tee /etc/hosts >/dev/null;
@@ -83,12 +83,12 @@ do
 	auth=$(cat /home/ubuntu/.ssh/authorized_keys);
 
 	sshpass -p $passwd \
-		ssh -o StrictHostKeyChecking=no ubuntu@$name \
+		ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@$name \
 		"
 		sudo echo '$auth' > /home/ubuntu/.ssh/authorized_keys;
 		echo 'hello from $name';
 		";
 	sshpass -p $passwd \
-		ssh -o StrictHostKeyChecking=no ubuntu@$name ssh -o StrictHostKeyChecking=no ubuntu@$myhost "echo hello";
+		ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null ubuntu@$name ssh -o StrictHostKeyChecking=no ubuntu@$myhost "echo hello";
 
 done;

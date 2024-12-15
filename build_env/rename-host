@@ -1,4 +1,4 @@
-x.x.x.x master
-x.x.x.x client 
-x.x.x.x slave-1
-x.x.x.x slave-2
+10.24.51.211 master
+10.24.51.76 client 
+10.24.51.26 slave-1
+10.24.51.102 slave-2
