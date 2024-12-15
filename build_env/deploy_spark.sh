@@ -5,9 +5,9 @@ pkgs="https://downloads.lightbend.com/scala/2.12.2/scala-2.12.2.tgz https://arch
 sudo -u ubuntu mkdir ~/tmp
 for p in $(echo $pkgs)
 do
-    # download only if the package doesn't exist
-    cat /home/ubuntu/tmp/"$p" > /dev/null || \
-    wget "$p" -P /home/ubuntu/tmp/
+    download only if the package doesn't exist
+   cat /home/ubuntu/tmp/"$p" > /dev/null || \
+   wget "$p" -P /home/ubuntu/tmp/
 done
 
 # download
@@ -31,8 +31,8 @@ do
     sudo -u ubuntu ssh ubuntu@$n "echo 'export TERM=xterm-color' >> ~/.bashrc"
     sudo -u ubuntu ssh ubuntu@$n "source ~/.bashrc"
     # install spark
-    sudo -u ubuntu scp -r ~/tmp/spark-2.4.7-bin-without-hadoop.tgz ubuntu@$n:~
-    sudo -u ubuntu ssh ubuntu@$n "tar -xzf ~/spark-2.4.7-bin-without-hadoop.tgz"
+    sudo -u ubuntu scp -r ~/tmp/spark-2.4.7-bin-without-hadoop.gz ubuntu@$n:~
+    sudo -u ubuntu ssh ubuntu@$n "tar -xzf ~/spark-2.4.7-bin-without-hadoop.gz"
     sudo -u ubuntu ssh ubuntu@$n "mv ~/spark-2.4.7-bin-without-hadoop ~/spark-2.4.7"
     # configure spark
     sudo -u ubuntu scp -r spark/conf ubuntu@$n:~/spark-2.4.7
