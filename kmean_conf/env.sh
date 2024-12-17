@@ -1,0 +1,24 @@
+# The parameters for data generation. 100 million points roughly produces 36GB data size
+NUM_OF_POINTS=50000
+NUM_OF_CLUSTERS=20
+DIMENSIONS=20
+SCALING=0.6
+NUM_OF_PARTITIONS=4
+
+MAX_ITERATION=50000
+NUM_RUN=1
+
+SPARK_STORAGE_MEMORYFRACTION=0.48
+
+
+# # The parameters for data generation. 100 million points roughly produces 36GB data size
+# NUM_OF_POINTS=60000000
+# NUM_OF_CLUSTERS=10
+# DIMENSIONS=20
+# SCALING=0.6
+# NUM_OF_PARTITIONS=64
+# MAX_ITERATION=10
+
+# NUM_RUN=1
+
+# SPARK_STORAGE_MEMORYFRACTION=0.48
