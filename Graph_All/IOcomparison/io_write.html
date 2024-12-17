@@ -1,0 +1,73 @@
+<!--
+	THIS EXAMPLE WAS DOWNLOADED FROM https://echarts.apache.org/examples/en/editor.html?c=dataset-simple0&code=PYBwLglsB2AEC8sDeAoWsA2BTA5l6AJgFzIC-ANGrGMMBpCCUhVQQIZhsDOWYTV6LsACuAJwDGWEgG0B6WNIDkIUcALDxYReViKAygFs2GDABEObAPp6AjJYCSAeUsB1bbsPGzF6wCYHzm46igAybKJ45pzWdk6u2qHhkT56_nFuALqU8vJKpvZ6ANKWjgByIQCa7gAcAGwAdLUAnOTVAAz1NgCs5DZ9jQAsvW0NTbVZcuhKALIAotOOAEoVlgCCpaaW-UU1DTYAzOQA7E31XUe9Xb5nLTYDA_VHvhM5U4pzC8trG1sFxXqzRY1Lr1OrHU6-WrDB73chNar1fZHF6vGbzJYrMqVXaIlonUGHA5HRpQg4dLoonJoz6Y8orAFA1og2q-Y4IpoXMmgzm-faPClyDJUFjoAAeq1FEC4TGoAE8QFJdOIOLhgKJZYpYCLYLKJVKmNqAPSG2CmLDiDDhLCwHgANywomMsAARuEbQ6IFguDosGxxAALWAAdwgJhd1qMIAVBCoxuowFgbFg4jowgMcGAADNYOxODwwPUhGJJC7ZTmsJm2MJ6PUqDxRJ7pQokHKFSRFK7RJqKMhW4qO-FuzoW2B5f3O0Pe6O27oJ1qhaQANxAA
+	⚠ Please be aware that this chart is not an official demo of Apache ECharts but is made by user-generated code.
+-->
+<!DOCTYPE html>
+<html lang="en" style="height: 100%">
+<head>
+  <meta charset="utf-8">
+</head>
+<body style="height: 100%; margin: 0">
+  <div id="container" style="height: 100%"></div>
+
+  
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+  
+  <!-- Uncomment this line if you want to dataTool extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.5.1/dist/extension/dataTool.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use gl extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-gl@2/dist/echarts-gl.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-stat extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-stat@latest/dist/ecStat.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to echarts-graph-modularity extension
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts-graph-modularity@2/dist/echarts-graph-modularity.min.js"></script>
+  -->
+  <!-- Uncomment this line if you want to use map
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@4.9.0/map/js/world.js"></script>
+  -->
+  <!-- Uncomment these two lines if you want to use bmap extension
+  <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=YOUR_API_KEY"></script>
+  <script type="text/javascript" src="https://fastly.jsdelivr.net/npm/echarts@5.5.1/dist/extension/bmap.min.js"></script>
+  -->
+
+  <script type="text/javascript">
+    var dom = document.getElementById('container');
+    var myChart = echarts.init(dom, null, {
+      renderer: 'canvas',
+      useDirtyRect: false
+    });
+    var app = {};
+    
+    var option;
+
+    option = {
+  legend: {},
+  tooltip: {},
+  dataset: {
+    source: [
+      ['product', 'SmallData_S1_IO_W', 'SmallData_S2_IO_W', 'LargeData_S1_IO_W','LargeData_S2_IO_W'],
+      ['DISK_ONLY', 86.69,80.15,111.64,106.96],
+      ['MEMORY_AND_DISK', 86.13,79.57,152.59,144.72],
+      ['MEMORY_AND_DISK_SER', 85.86,79.26,104.44,98.37],
+      ['MEMORY_ONLY', 86.39,79.83,137.66,130.5],
+      ['MEMORY_ONLY_SER',85.62,78.97,130.87,123.75]
+    ]
+  },
+  xAxis: { type: 'category' },
+  yAxis: {},
+  // Declare several bar series, each will be mapped
+  // to a column of dataset.source by default.
+  series: [{ type: 'bar' }, { type: 'bar' }, { type: 'bar' }, { type: 'bar' }]
+};
+
+    if (option && typeof option === 'object') {
+      myChart.setOption(option);
+    }
+
+    window.addEventListener('resize', myChart.resize);
+  </script>
+</body>
+</html>
