@@ -1,0 +1,8 @@
+spark.eventLog.enabled=true
+spark.eventLog.dir=hdfs://master:9000/tmp/spark_history
+spark.history.fs.logDirectory=hdfs://master:9000/tmp/spark_history
+
+spark.storage.level=MEMORY_ONLY_SER
+spark.default.parallelism=16
+spark.executor.memory=6g
+spark.driver.memory=4g
